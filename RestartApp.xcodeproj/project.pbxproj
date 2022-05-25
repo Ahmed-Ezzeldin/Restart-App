@@ -18,6 +18,7 @@
 		BE49B4ED283D66E500128E82 /* success.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BE49B4EB283D66E500128E82 /* success.m4a */; };
 		BE49B4F4283D6CAB00128E82 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE49B4F3283D6CAB00128E82 /* HomeView.swift */; };
 		BE49B4F6283D6CE400128E82 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE49B4F5283D6CE400128E82 /* OnBoardingView.swift */; };
+		BE82B315283EAE0300067E7C /* CircleGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE82B314283EAE0300067E7C /* CircleGroupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		BE49B4F2283D6B9100128E82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BE49B4F3283D6CAB00128E82 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BE49B4F5283D6CE400128E82 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		BE82B314283EAE0300067E7C /* CircleGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleGroupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				BE49B4F2283D6B9100128E82 /* Info.plist */,
-				BE49B4F1283D699D00128E82 /* Utilities */,
 				BE49B4F0283D697C00128E82 /* Views */,
+				BE49B4F1283D699D00128E82 /* Utilities */,
 				BE49B4EE283D671D00128E82 /* sounds */,
 				BE496C9B283AB66A00E46881 /* RestartAppApp.swift */,
 				BE49B4EF283D694200128E82 /* Screens */,
@@ -162,6 +164,7 @@
 		BE49B4F0283D697C00128E82 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BE82B314283EAE0300067E7C /* CircleGroupView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE82B315283EAE0300067E7C /* CircleGroupView.swift in Sources */,
 				BE49B4F4283D6CAB00128E82 /* HomeView.swift in Sources */,
 				BE49B4F6283D6CE400128E82 /* OnBoardingView.swift in Sources */,
 				BE496C9E283AB66A00E46881 /* ContentView.swift in Sources */,
