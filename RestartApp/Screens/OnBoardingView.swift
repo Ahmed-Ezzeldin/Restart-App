@@ -12,6 +12,7 @@ struct OnBoardingView: View {
     @AppStorage("onboarding") var isOnboardingViewAction: Bool = true;
     @State private var buttonWidth: Double = UIScreen.main.bounds.width - 80
     @State private var buttonOffset: CGFloat = 0
+    @State private var isAnimating: Bool =  false
     
     var body: some View {
         ZStack{
@@ -35,6 +36,10 @@ struct OnBoardingView: View {
                     .multilineTextAlignment(.center)
                     .padding(.horizontal,10)
                 }
+                .opacity(isAnimating ? 1: 0)
+                .offset(y: isAnimating ? 0: -40)
+                .animation(.easeOut(duration: 2), value: isAnimating  )
+                //MARK: Center
                 //=====================================================
                 Spacer()
                 ZStack{
@@ -42,6 +47,8 @@ struct OnBoardingView: View {
                     Image("character-1")
                         .resizable()
                         .scaledToFit()
+                        .opacity(isAnimating ? 1 : 0)
+                        .animation(.easeOut(duration: 2), value: isAnimating)
                 }
                 
                 Spacer()
@@ -94,14 +101,16 @@ struct OnBoardingView: View {
                                     }
                                 }
                                 .onEnded {_ in
-                                
-                                    if buttonOffset > buttonWidth / 2 {
-                                        buttonOffset = buttonWidth - 80
-                                        isOnboardingViewAction = false
-                                    } else {
-                                        buttonOffset = 0
+                                    
+                                    withAnimation(Animation.easeOut(duration: 0.7)){
+                                        if buttonOffset > buttonWidth / 2 {
+                                            buttonOffset = buttonWidth - 80
+                                            isOnboardingViewAction = false
+                                        } else {
+                                            buttonOffset = 0
+                                        }
                                     }
-                                 
+                                    
                                 }
                             
                         )
@@ -110,10 +119,16 @@ struct OnBoardingView: View {
                 }
                 .frame(width: buttonWidth,height: 80, alignment: .center)
                 .padding()
+                .opacity(isAnimating ? 1 : 0)
+                .offset(y: isAnimating ? 0 : 40)
+                .animation(.easeOut(duration: 2) , value: isAnimating)
                 Spacer()
             }
             
         }
+        .onAppear(perform: {
+            isAnimating = true
+        })
     }
 }
 
